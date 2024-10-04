@@ -6,6 +6,7 @@ import lk.ijse.gdse.aad.possystemusingspring.customObj.CustomerResponse;
 import lk.ijse.gdse.aad.possystemusingspring.dao.CustomerDao;
 import lk.ijse.gdse.aad.possystemusingspring.dto.CustomerDto;
 import lk.ijse.gdse.aad.possystemusingspring.entity.Customer;
+import lk.ijse.gdse.aad.possystemusingspring.exception.CustomerNotFoundException;
 import lk.ijse.gdse.aad.possystemusingspring.exception.DataPersistFailedException;
 import lk.ijse.gdse.aad.possystemusingspring.util.Mapping;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -52,8 +54,15 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public void updateCustomer(String customerId, CustomerDto customerDto) {
-
+    public void updateCustomer(String customerId, CustomerDto incomeCustomerDto) {
+        Optional<Customer> tmpCustomer = customerDao.findById(customerId);
+        if (!tmpCustomer.isPresent()) {
+            throw new CustomerNotFoundException("Customer Not Found!");
+        }else {
+            tmpCustomer.get().setCustomerName(incomeCustomerDto.getCustomerName());
+            tmpCustomer.get().setCustomerAddress(incomeCustomerDto.getCustomerAddress());
+            tmpCustomer.get().setCustomerSalary(incomeCustomerDto.getCustomerSalary());
+        }
     }
 
     @Override

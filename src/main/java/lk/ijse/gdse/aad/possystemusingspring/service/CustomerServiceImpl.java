@@ -1,6 +1,7 @@
 package lk.ijse.gdse.aad.possystemusingspring.service;
 
 import jakarta.transaction.Transactional;
+import lk.ijse.gdse.aad.possystemusingspring.customObj.CustomerResponse;
 import lk.ijse.gdse.aad.possystemusingspring.dao.CustomerDao;
 import lk.ijse.gdse.aad.possystemusingspring.dto.CustomerDto;
 import lk.ijse.gdse.aad.possystemusingspring.entity.Customer;
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Transactional
-public class CustomerServiceImpl implements CustomerService{
+public class CustomerServiceImpl implements CustomerService {
 
     @Autowired
     private CustomerDao customerDao;
@@ -30,5 +31,10 @@ public class CustomerServiceImpl implements CustomerService{
             }
         }
 
+    }
+
+    @Override
+    public CustomerResponse getCustomer(String customerId) {
+        return mapping.convertToDto(customerDao.getCustomerByCustomerId(customerId));
     }
 }

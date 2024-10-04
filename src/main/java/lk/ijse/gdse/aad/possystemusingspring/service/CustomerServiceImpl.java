@@ -1,6 +1,7 @@
 package lk.ijse.gdse.aad.possystemusingspring.service;
 
 import jakarta.transaction.Transactional;
+import lk.ijse.gdse.aad.possystemusingspring.customObj.CustomerErrorResponse;
 import lk.ijse.gdse.aad.possystemusingspring.customObj.CustomerResponse;
 import lk.ijse.gdse.aad.possystemusingspring.dao.CustomerDao;
 import lk.ijse.gdse.aad.possystemusingspring.dto.CustomerDto;
@@ -37,7 +38,12 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public CustomerResponse getCustomer(String customerId) {
-        return mapping.convertToDto(customerDao.getCustomerByCustomerId(customerId));
+        if (customerDao.existsById(customerId)) {
+            return mapping.convertToDto(customerDao.getCustomerByCustomerId(customerId));
+        } else {
+            return new CustomerErrorResponse(0, "Customer Not Found!");
+        }
+
     }
 
     @Override

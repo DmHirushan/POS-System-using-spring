@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @ComponentScan(basePackages = "lk.ijse.gdse.aad.possystemusingspring")
-@EnableJpaRepositories(basePackages = "lk.ijse.gdse.aad.possystemusingspring")
-@EnableTransactionManagement
+//@EnableJpaRepositories(basePackages = "lk.ijse.gdse.aad.possystemusingspring")
+//@EnableTransactionManagement
 public class WebAppRootConfig {
 }

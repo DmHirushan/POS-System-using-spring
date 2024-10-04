@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class CustomerServiceImpl implements CustomerService {
@@ -36,5 +38,20 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public CustomerResponse getCustomer(String customerId) {
         return mapping.convertToDto(customerDao.getCustomerByCustomerId(customerId));
+    }
+
+    @Override
+    public List<CustomerDto> getAllCustomers() {
+        return mapping.convertToDtos(customerDao.findAll());
+    }
+
+    @Override
+    public void updateCustomer(String customerId, CustomerDto customerDto) {
+
+    }
+
+    @Override
+    public void deleteCustomer(String customerId) {
+
     }
 }

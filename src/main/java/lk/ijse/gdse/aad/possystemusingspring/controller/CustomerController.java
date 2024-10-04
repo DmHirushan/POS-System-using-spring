@@ -45,4 +45,10 @@ public class CustomerController {
     public List<CustomerDto> getAllCustomers(){
         return customerService.getAllCustomers();
     }
+
+    @PatchMapping("/{customerId}")
+    public ResponseEntity<Void> updateCustomer(@PathVariable ("customerId") String customerId, @RequestBody CustomerDto customerDto){
+        customerService.updateCustomer(customerId, customerDto);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 }

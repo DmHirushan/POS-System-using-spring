@@ -1,6 +1,7 @@
 package lk.ijse.gdse.aad.possystemusingspring.controller;
 
 import lk.ijse.gdse.aad.possystemusingspring.dto.CustomerDto;
+import lk.ijse.gdse.aad.possystemusingspring.exception.DataPersistFailedException;
 import lk.ijse.gdse.aad.possystemusingspring.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,18 @@ public class CustomerController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Void> saveCustomer(@RequestBody CustomerDto customerDto){
-        customerService.saveCustomer(customerDto);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+        if (customerDto == null) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }else {
+            try {
+                customerService.saveCustomer(customerDto);
+                return new ResponseEntity<>(HttpStatus.CREATED);
+            }catch (DataPersistFailedException e) {
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }catch (Exception e) {
+                return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+            }
+        }
+
     }
 }

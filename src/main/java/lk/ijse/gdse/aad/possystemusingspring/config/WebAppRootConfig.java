@@ -12,12 +12,14 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import javax.sql.DataSource;
 
 @Configuration
 @ComponentScan(basePackages = "lk.ijse.gdse.aad.possystemusingspring")
 @EnableJpaRepositories(basePackages = "lk.ijse.gdse.aad.possystemusingspring")
+@EnableWebMvc
 @EnableTransactionManagement
 public class WebAppRootConfig {
     @Bean
@@ -29,7 +31,7 @@ public class WebAppRootConfig {
     public DataSource dataSource() {
         var dmds = new DriverManagerDataSource();
         dmds.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dmds.setUrl("jdbc:mysql://localhost:3306/Pos_System_using_spring?createDatabaseIfNotExist=true");
+        dmds.setUrl("jdbc:mysql://localhost:3306/Pos_System_using_spring");
         dmds.setUsername("root");
         dmds.setPassword("Ijse1234");
         return dmds;
@@ -41,7 +43,7 @@ public class WebAppRootConfig {
         vendorAdapter.setGenerateDdl(true);
         LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
         factory.setJpaVendorAdapter(vendorAdapter);
-        factory.setPackagesToScan("lk.ijse.gdse.aad68.notetaker.entity");
+        factory.setPackagesToScan("lk.ijse.gdse.aad.possystemusingspring.entity");
         factory.setDataSource(dataSource());
         return factory;
     }

@@ -20,6 +20,6 @@ public class CustomerServiceImpl implements CustomerService{
 
     @Override
     public void saveCustomer(CustomerDto customerDto) {
-
+        customerDao.save(mapping.convertToEntity(customerDto));
     }
 }

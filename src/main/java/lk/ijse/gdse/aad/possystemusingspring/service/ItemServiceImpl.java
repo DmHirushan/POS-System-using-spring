@@ -3,6 +3,8 @@ package lk.ijse.gdse.aad.possystemusingspring.service;
 import jakarta.transaction.Transactional;
 import lk.ijse.gdse.aad.possystemusingspring.dao.ItemDao;
 import lk.ijse.gdse.aad.possystemusingspring.dto.ItemDto;
+import lk.ijse.gdse.aad.possystemusingspring.entity.Item;
+import lk.ijse.gdse.aad.possystemusingspring.exception.DataPersistFailedException;
 import lk.ijse.gdse.aad.possystemusingspring.util.Mapping;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,7 +19,15 @@ public class ItemServiceImpl implements ItemService{
 
     @Override
     public void saveItem(ItemDto itemDto) {
-        itemDao.save(mapping.convertToEntity(itemDto));
+        if (itemDao.existsById(itemDto.getItemCode())) {
+            throw new DataPersistFailedException("This Item Code already exists!");
+        }else {
+            Item savedItem = itemDao.save(mapping.convertToEntity(itemDto));
+            if (savedItem == null && savedItem.getItemCode() == null) {
+                throw new DataPersistFailedException("Can't save the Item!");
+            }
+        }
+
     }
 
     @Override

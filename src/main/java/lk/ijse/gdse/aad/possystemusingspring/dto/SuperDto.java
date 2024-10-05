@@ -4,5 +4,5 @@ import lk.ijse.gdse.aad.possystemusingspring.customObj.CustomerResponse;
 
 import java.io.Serializable;
 
-public interface SuperDto extends Serializable, CustomerResponse {
+public interface SuperDto extends Serializable {
 }

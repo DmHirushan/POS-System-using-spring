@@ -1,6 +1,6 @@
 package lk.ijse.gdse.aad.possystemusingspring.dao;
 
-import lk.ijse.gdse.aad.possystemusingspring.entity.Customer;
+import lk.ijse.gdse.aad.possystemusingspring.entity.impl.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

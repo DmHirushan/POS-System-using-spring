@@ -1,8 +1,9 @@
-package lk.ijse.gdse.aad.possystemusingspring.entity;
+package lk.ijse.gdse.aad.possystemusingspring.entity.impl;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lk.ijse.gdse.aad.possystemusingspring.entity.SuperEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,7 +13,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Table(name = "customer")
 @Entity
-public class Customer implements SuperEntity{
+public class Customer implements SuperEntity {
     @Id
     private String customerId;
     private String customerName;

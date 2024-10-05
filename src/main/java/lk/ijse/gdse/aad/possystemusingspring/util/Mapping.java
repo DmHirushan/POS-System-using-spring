@@ -1,7 +1,7 @@
 package lk.ijse.gdse.aad.possystemusingspring.util;
 
 import lk.ijse.gdse.aad.possystemusingspring.dto.impl.CustomerDto;
-import lk.ijse.gdse.aad.possystemusingspring.entity.Customer;
+import lk.ijse.gdse.aad.possystemusingspring.entity.impl.Customer;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;

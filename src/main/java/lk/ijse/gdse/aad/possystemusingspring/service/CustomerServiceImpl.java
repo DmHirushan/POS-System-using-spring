@@ -4,13 +4,12 @@ import jakarta.transaction.Transactional;
 import lk.ijse.gdse.aad.possystemusingspring.customObj.CustomerErrorResponse;
 import lk.ijse.gdse.aad.possystemusingspring.customObj.CustomerResponse;
 import lk.ijse.gdse.aad.possystemusingspring.dao.CustomerDao;
-import lk.ijse.gdse.aad.possystemusingspring.dto.CustomerDto;
+import lk.ijse.gdse.aad.possystemusingspring.dto.impl.CustomerDto;
 import lk.ijse.gdse.aad.possystemusingspring.entity.Customer;
 import lk.ijse.gdse.aad.possystemusingspring.exception.CustomerNotFoundException;
 import lk.ijse.gdse.aad.possystemusingspring.exception.DataPersistFailedException;
 import lk.ijse.gdse.aad.possystemusingspring.util.Mapping;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

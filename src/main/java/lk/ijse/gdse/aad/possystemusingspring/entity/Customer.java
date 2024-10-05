@@ -1,4 +1,4 @@
-package lk.ijse.gdse.aad.possystemusingspring.entity.impl;
+package lk.ijse.gdse.aad.possystemusingspring.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

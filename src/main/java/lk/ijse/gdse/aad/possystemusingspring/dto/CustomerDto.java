@@ -1,4 +1,4 @@
-package lk.ijse.gdse.aad.possystemusingspring.dto.impl;
+package lk.ijse.gdse.aad.possystemusingspring.dto;
 
 import lk.ijse.gdse.aad.possystemusingspring.customObj.CustomerResponse;
 import lk.ijse.gdse.aad.possystemusingspring.dto.SuperDto;

@@ -1,7 +1,7 @@
 package lk.ijse.gdse.aad.possystemusingspring.service;
 
 import lk.ijse.gdse.aad.possystemusingspring.customObj.CustomerResponse;
-import lk.ijse.gdse.aad.possystemusingspring.dto.impl.CustomerDto;
+import lk.ijse.gdse.aad.possystemusingspring.dto.CustomerDto;
 
 import java.util.List;
 

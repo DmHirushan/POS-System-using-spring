@@ -2,6 +2,7 @@ package lk.ijse.gdse.aad.possystemusingspring.controller;
 
 import lk.ijse.gdse.aad.possystemusingspring.customObj.CustomerResponse;
 import lk.ijse.gdse.aad.possystemusingspring.dto.CustomerDto;
+import lk.ijse.gdse.aad.possystemusingspring.exception.CustomerNotFoundException;
 import lk.ijse.gdse.aad.possystemusingspring.exception.DataPersistFailedException;
 import lk.ijse.gdse.aad.possystemusingspring.service.CustomerService;
 import lombok.RequiredArgsConstructor;
@@ -50,5 +51,18 @@ public class CustomerController {
     public ResponseEntity<Void> updateCustomer(@PathVariable ("customerId") String customerId, @RequestBody CustomerDto customerDto){
         customerService.updateCustomer(customerId, customerDto);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @DeleteMapping("/{customerId}")
+    public ResponseEntity<Void> deleteCustomer(@PathVariable ("customerId") String customerId){
+        try {
+            customerService.deleteCustomer(customerId);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (CustomerNotFoundException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
     }
 }

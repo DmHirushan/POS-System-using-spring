@@ -17,6 +17,7 @@ import java.util.List;
 @RestController
 @RequestMapping("api/v1/customer")
 @RequiredArgsConstructor
+@CrossOrigin
 public class CustomerController {
     @Autowired
     private final CustomerService customerService;

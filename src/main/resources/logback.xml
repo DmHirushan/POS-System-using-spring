@@ -1,33 +1,53 @@
+<!--<configuration>-->
+
+<!--    &lt;!&ndash; Console appender &ndash;&gt;-->
+<!--    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">-->
+<!--        <encoder>-->
+<!--            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>-->
+<!--        </encoder>-->
+<!--    </appender>-->
+
+<!--    &lt;!&ndash; File appender &ndash;&gt;-->
+<!--    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+<!--        <file>logs/myapp.log</file>-->
+
+<!--        &lt;!&ndash; Controls log file rotation &ndash;&gt;-->
+<!--        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+<!--            &lt;!&ndash; Logs are archived every day &ndash;&gt;-->
+<!--            <fileNamePattern>logs/myapp.%d{yyyy-MM-dd}.log</fileNamePattern>-->
+<!--            &lt;!&ndash; Keep 30 days worth of logs &ndash;&gt;-->
+<!--            <maxHistory>30</maxHistory>-->
+<!--        </rollingPolicy>-->
+
+<!--        <encoder>-->
+<!--            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>-->
+<!--        </encoder>-->
+<!--    </appender>-->
+
+<!--    &lt;!&ndash; Set the logging level and associate appenders &ndash;&gt;-->
+<!--    <root level="info">-->
+<!--        <appender-ref ref="CONSOLE" />-->
+<!--        <appender-ref ref="FILE" />-->
+<!--    </root>-->
+
+<!--</configuration>-->
+
 <configuration>
-
-    <!-- Console appender -->
-    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
 
-    <!-- File appender -->
-    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>logs/myapp.log</file>
-
-        <!-- Controls log file rotation -->
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <!-- Logs are archived every day -->
-            <fileNamePattern>logs/myapp.%d{yyyy-MM-dd}.log</fileNamePattern>
-            <!-- Keep 30 days worth of logs -->
-            <maxHistory>30</maxHistory>
-        </rollingPolicy>
-
+    <appender name="File" class="ch.qos.logback.core.FileAppender">
+        <file>D:\Working Directory 2.0\AAD Module\2nd phase assignment\POSsystem-using-spring/pos.log</file>
         <encoder>
-            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
 
-    <!-- Set the logging level and associate appenders -->
     <root level="info">
-        <appender-ref ref="CONSOLE" />
-        <appender-ref ref="FILE" />
+        <appender-ref ref="Console"/>
+        <appender-ref ref="File"/>
     </root>
-
 </configuration>

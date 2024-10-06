@@ -6,6 +6,8 @@ import lk.ijse.gdse.aad.possystemusingspring.exception.CustomerNotFoundException
 import lk.ijse.gdse.aad.possystemusingspring.exception.DataPersistFailedException;
 import lk.ijse.gdse.aad.possystemusingspring.service.CustomerService;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -19,6 +21,8 @@ import java.util.List;
 @RequiredArgsConstructor
 @CrossOrigin
 public class CustomerController {
+
+    Logger logger = LoggerFactory.getLogger(CustomerController.class);
 
     @Autowired
     private final CustomerService customerService;

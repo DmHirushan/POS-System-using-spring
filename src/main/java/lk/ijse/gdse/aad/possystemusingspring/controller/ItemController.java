@@ -16,6 +16,7 @@ import java.util.List;
 @RestController
 @RequestMapping("api/v1/item")
 @RequiredArgsConstructor
+@CrossOrigin
 public class ItemController {
     @Autowired
     private ItemService itemService;

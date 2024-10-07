@@ -31,4 +31,10 @@ public class ItemController {
             }
         }
     }
+
+    @PatchMapping("/{itemCode}")
+    public ResponseEntity<Void> updateItem(@PathVariable ("itemCode") String itemCode, @RequestBody ItemDto itemDto){
+        itemService.updateItem(itemCode, itemDto);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 }

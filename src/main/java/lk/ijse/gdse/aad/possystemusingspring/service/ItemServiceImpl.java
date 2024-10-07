@@ -58,7 +58,17 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public List<ItemDto> getAllItem() {
+    public List<ItemDto> getAllItems() {
         return mapping.convertToItemDtos(itemDao.findAll());
+    }
+
+    @Override
+    public void deleteItem(String itemCode){
+        Optional<Item> existsItem = itemDao.findById(itemCode);
+        if (!existsItem.isPresent()) {
+            throw new ItemNotFoundException("Item not found!");
+        } else {
+            itemDao.deleteById(itemCode);
+        }
     }
 }

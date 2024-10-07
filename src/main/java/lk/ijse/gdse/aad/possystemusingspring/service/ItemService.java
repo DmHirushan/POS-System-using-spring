@@ -9,5 +9,6 @@ public interface ItemService {
     public void saveItem(ItemDto itemDto);
     public void updateItem(String itemCode, ItemDto itemDto);
     public ItemResponse getItem(String itemCode);
-    public List<ItemDto> getAllItem();
+    public List<ItemDto> getAllItems();
+    public void deleteItem(String itemCode);
 }

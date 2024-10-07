@@ -1,5 +1,6 @@
 package lk.ijse.gdse.aad.possystemusingspring.controller;
 
+import lk.ijse.gdse.aad.possystemusingspring.customObj.ItemResponse;
 import lk.ijse.gdse.aad.possystemusingspring.dto.ItemDto;
 import lk.ijse.gdse.aad.possystemusingspring.exception.DataPersistFailedException;
 import lk.ijse.gdse.aad.possystemusingspring.service.ItemService;
@@ -36,5 +37,10 @@ public class ItemController {
     public ResponseEntity<Void> updateItem(@PathVariable ("itemCode") String itemCode, @RequestBody ItemDto itemDto){
         itemService.updateItem(itemCode, itemDto);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @GetMapping("/{itemCode}")
+    public ItemResponse getItem(@PathVariable ("itemCode") String itemCode){
+        return itemService.getItem(itemCode);
     }
 }

@@ -31,4 +31,8 @@ public class Mapping {
     public Item convertToEntity(ItemDto itemDto){
         return modelMapper.map(itemDto, Item.class);
     }
+
+    public ItemDto convertToDto(Item item){
+        return modelMapper.map(item, ItemDto.class);
+    }
 }

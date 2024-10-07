@@ -1,6 +1,8 @@
 package lk.ijse.gdse.aad.possystemusingspring.service;
 
 import jakarta.transaction.Transactional;
+import lk.ijse.gdse.aad.possystemusingspring.customObj.ItemErrorResponse;
+import lk.ijse.gdse.aad.possystemusingspring.customObj.ItemResponse;
 import lk.ijse.gdse.aad.possystemusingspring.dao.ItemDao;
 import lk.ijse.gdse.aad.possystemusingspring.dto.ItemDto;
 import lk.ijse.gdse.aad.possystemusingspring.entity.Item;
@@ -14,7 +16,7 @@ import java.util.Optional;
 
 @Service
 @Transactional
-public class ItemServiceImpl implements ItemService{
+public class ItemServiceImpl implements ItemService {
     @Autowired
     private ItemDao itemDao;
     @Autowired
@@ -42,6 +44,15 @@ public class ItemServiceImpl implements ItemService{
             existItem.get().setItemName(incomingItem.getItemName());
             existItem.get().setItemQty(incomingItem.getItemQty());
             existItem.get().setItemPrice(incomingItem.getItemPrice());
+        }
+    }
+
+    @Override
+    public ItemResponse getItem(String itemCode) {
+        if (itemDao.existsById(itemCode)) {
+            return mapping.convertToDto(itemDao.getItemByItemCode(itemCode));
+        } else {
+            return new ItemErrorResponse(0, "Item Not Found!");
         }
     }
 }

@@ -1,0 +1,1 @@
+2024-10-07 17:30:50 INFO  l.i.g.a.p.c.CustomerController - Request to save customer CustomerDto(customerId=C0010, customerName=Kamal, customerAddress=Galle, customerSalary=50000.0)

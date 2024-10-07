@@ -12,6 +12,7 @@ import lk.ijse.gdse.aad.possystemusingspring.util.Mapping;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -54,5 +55,10 @@ public class ItemServiceImpl implements ItemService {
         } else {
             return new ItemErrorResponse(0, "Item Not Found!");
         }
+    }
+
+    @Override
+    public List<ItemDto> getAllItem() {
+        return mapping.convertToItemDtos(itemDao.findAll());
     }
 }

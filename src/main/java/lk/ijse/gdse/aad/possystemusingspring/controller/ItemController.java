@@ -3,6 +3,7 @@ package lk.ijse.gdse.aad.possystemusingspring.controller;
 import lk.ijse.gdse.aad.possystemusingspring.customObj.ItemResponse;
 import lk.ijse.gdse.aad.possystemusingspring.dto.ItemDto;
 import lk.ijse.gdse.aad.possystemusingspring.exception.DataPersistFailedException;
+import lk.ijse.gdse.aad.possystemusingspring.exception.ItemNotFoundException;
 import lk.ijse.gdse.aad.possystemusingspring.service.ItemService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,5 +50,17 @@ public class ItemController {
     @GetMapping
     public List<ItemDto> getAllItems(){
         return itemService.getAllItems();
+    }
+
+    @DeleteMapping("/{itemCode}")
+    public ResponseEntity<Void> deleteItem(@PathVariable ("itemCode") String itemCode) {
+        try {
+            itemService.deleteItem(itemCode);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (ItemNotFoundException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }

@@ -5,9 +5,12 @@ import lk.ijse.gdse.aad.possystemusingspring.dao.ItemDao;
 import lk.ijse.gdse.aad.possystemusingspring.dto.ItemDto;
 import lk.ijse.gdse.aad.possystemusingspring.entity.Item;
 import lk.ijse.gdse.aad.possystemusingspring.exception.DataPersistFailedException;
+import lk.ijse.gdse.aad.possystemusingspring.exception.ItemNotFoundException;
 import lk.ijse.gdse.aad.possystemusingspring.util.Mapping;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -31,7 +34,14 @@ public class ItemServiceImpl implements ItemService{
     }
 
     @Override
-    public void updateItem(String itemCode, ItemDto itemDto) {
-
+    public void updateItem(String itemCode, ItemDto incomingItem) {
+        Optional<Item> existItem = itemDao.findById(itemCode);
+        if (existItem == null) {
+            throw new ItemNotFoundException("Item not found!");
+        } else {
+            existItem.get().setItemName(incomingItem.getItemName());
+            existItem.get().setItemQty(incomingItem.getItemQty());
+            existItem.get().setItemPrice(incomingItem.getItemPrice());
+        }
     }
 }

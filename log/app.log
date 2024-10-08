@@ -3,3 +3,7 @@
 2024-10-08 07:52:26 INFO  l.i.g.a.p.c.CustomerController - Successfully retrieved customer: CustomerDto(customerId=C005, customerName=Kamal, customerAddress=Galle, customerSalary=50000.0)
 2024-10-08 07:52:31 INFO  l.i.g.a.p.c.CustomerController - Request to get all customers
 2024-10-08 07:52:31 INFO  l.i.g.a.p.c.CustomerController - Successfully retrieved all customers, count: 10
+2024-10-08 07:59:19 INFO  l.i.g.a.p.c.CustomerController - Request to delete customer with customerId: C010
+2024-10-08 07:59:19 WARN  l.i.g.a.p.c.CustomerController - Customer not found with customerId: C010
+2024-10-08 07:59:40 INFO  l.i.g.a.p.c.CustomerController - Request to delete customer with customerId: C0010
+2024-10-08 07:59:40 INFO  l.i.g.a.p.c.CustomerController - Successfully deleted customer with customerId: C0010

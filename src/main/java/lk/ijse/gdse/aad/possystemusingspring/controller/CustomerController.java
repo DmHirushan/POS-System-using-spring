@@ -29,7 +29,7 @@ public class CustomerController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Void> saveCustomer(@RequestBody CustomerDto customerDto){
-        logger.info("Request to save customer {}", customerDto);
+        logger.info("Request to save customer: {}", customerDto);
         if (customerDto == null) {
             logger.warn("Received null customerDto for saving");
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);

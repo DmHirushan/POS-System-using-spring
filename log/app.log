@@ -1,1 +1,5 @@
 2024-10-07 17:30:50 INFO  l.i.g.a.p.c.CustomerController - Request to save customer CustomerDto(customerId=C0010, customerName=Kamal, customerAddress=Galle, customerSalary=50000.0)
+2024-10-08 07:52:24 INFO  l.i.g.a.p.c.CustomerController - Request to get customer with customerId: C005
+2024-10-08 07:52:26 INFO  l.i.g.a.p.c.CustomerController - Successfully retrieved customer: CustomerDto(customerId=C005, customerName=Kamal, customerAddress=Galle, customerSalary=50000.0)
+2024-10-08 07:52:31 INFO  l.i.g.a.p.c.CustomerController - Request to get all customers
+2024-10-08 07:52:31 INFO  l.i.g.a.p.c.CustomerController - Successfully retrieved all customers, count: 10

@@ -50,28 +50,40 @@ public class CustomerController {
 
     @GetMapping("/{customerId}")
     public CustomerResponse getCustomer(@PathVariable ("customerId") String customerId){
-        return customerService.getCustomer(customerId);
+        logger.info("Request to get customer with customerId: {}", customerId);
+        CustomerResponse response = customerService.getCustomer(customerId);
+        logger.info("Successfully retrieved customer: {}", response);
+        return response;
     }
 
     @GetMapping
     public List<CustomerDto> getAllCustomers(){
-        return customerService.getAllCustomers();
+        logger.info("Request to get all customers");
+        List<CustomerDto> allCustomers = customerService.getAllCustomers();
+        logger.info("Successfully retrieved all customers, count: {}", allCustomers.size());
+        return allCustomers;
     }
 
     @PatchMapping("/{customerId}")
     public ResponseEntity<Void> updateCustomer(@PathVariable ("customerId") String customerId, @RequestBody CustomerDto customerDto){
+        logger.info("Request to update customer with customerId: {}", customerId);
         customerService.updateCustomer(customerId, customerDto);
+        logger.info("Succcessfully updated customer with id: {}", customerId);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     @DeleteMapping("/{customerId}")
     public ResponseEntity<Void> deleteCustomer(@PathVariable ("customerId") String customerId){
+        logger.info("Request to delete customer with customerId: {}", customerId);
         try {
             customerService.deleteCustomer(customerId);
+            logger.info("Successfully deleted customer with customerId: {}", customerId);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } catch (CustomerNotFoundException e) {
+            logger.warn("Customer not found with customerId: {}", customerId);
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } catch (Exception e) {
+            logger.error("Unexpected error while deleting customer with customerId: {}", customerId);
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
 

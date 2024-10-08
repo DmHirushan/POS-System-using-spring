@@ -29,15 +29,20 @@ public class CustomerController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Void> saveCustomer(@RequestBody CustomerDto customerDto){
+        logger.info("Request to save customer {}", customerDto);
         if (customerDto == null) {
+            logger.warn("Received null customerDto for saving");
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }else {
             try {
                 customerService.saveCustomer(customerDto);
+                logger.info("Successfully saved customer: {}", customerDto);
                 return new ResponseEntity<>(HttpStatus.CREATED);
             }catch (DataPersistFailedException e) {
+                logger.error("Failed to persist customer data: {}", customerDto, e);
                 return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             }catch (Exception e) {
+                logger.error("Unexpected error while saving customer data: {}", customerDto, e);
                 return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
             }
         }

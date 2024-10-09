@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -13,10 +15,14 @@ import lombok.NoArgsConstructor;
 public class Order implements SuperEntity{
     @Id
     private String orderId;
+
     @ManyToOne
     @JoinColumn(name = "customerId", nullable = false)
     private Customer customer;
     private String date;
     private double subTotal;
     private double total;
+
+    @OneToMany(mappedBy = "orders")
+    private List<OrderDetail> orderDetails;
 }

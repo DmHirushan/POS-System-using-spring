@@ -9,3 +9,31 @@
 2024-10-08 07:59:40 INFO  l.i.g.a.p.c.CustomerController - Successfully deleted customer with customerId: C0010
 2024-10-08 11:34:56 INFO  l.i.g.a.p.controller.ItemController - Request to delete item with ID: I010
 2024-10-08 11:34:57 WARN  l.i.g.a.p.controller.ItemController - Item not found with ID: I010
+2024-10-08 16:01:22 INFO  l.i.g.a.p.controller.ItemController - Request to get all items
+2024-10-08 16:01:22 INFO  l.i.g.a.p.service.ItemServiceImpl - Fetching all customers
+2024-10-08 16:01:23 INFO  l.i.g.a.p.service.ItemServiceImpl - Successfully retrieved all customers, count: 4
+2024-10-08 16:01:23 INFO  l.i.g.a.p.controller.ItemController - Successfully retrieved all items, count: 4
+2024-10-08 16:01:29 INFO  l.i.g.a.p.controller.ItemController - Request to get item with ID: I001
+2024-10-08 16:01:29 INFO  l.i.g.a.p.service.ItemServiceImpl - Fetching item with item code: I001
+2024-10-08 16:01:30 INFO  l.i.g.a.p.service.ItemServiceImpl - Successfully retrieved item: ItemDto(itemCode=I001, itemName=Chocolate, itemQty=50, itemPrice=120.0)
+2024-10-08 16:01:30 INFO  l.i.g.a.p.controller.ItemController - Successfully retrieved item: ItemDto(itemCode=I001, itemName=Chocolate, itemQty=50, itemPrice=120.0)
+2024-10-08 16:06:46 INFO  l.i.g.a.p.controller.ItemController - Request to get all items
+2024-10-08 16:06:46 INFO  l.i.g.a.p.c.CustomerController - Request to get all customers
+2024-10-08 16:06:47 INFO  l.i.g.a.p.s.CustomerServiceImpl - Fetching all customers
+2024-10-08 16:06:47 INFO  l.i.g.a.p.service.ItemServiceImpl - Fetching all customers
+2024-10-08 16:06:47 INFO  l.i.g.a.p.service.ItemServiceImpl - Successfully retrieved all customers, count: 4
+2024-10-08 16:06:47 INFO  l.i.g.a.p.s.CustomerServiceImpl - Successfully retrieved all customers, count: 9
+2024-10-08 16:06:47 INFO  l.i.g.a.p.c.CustomerController - Successfully retrieved all customers, count: 9
+2024-10-08 16:06:47 INFO  l.i.g.a.p.controller.ItemController - Successfully retrieved all items, count: 4
+2024-10-08 16:06:47 INFO  l.i.g.a.p.c.CustomerController - Request to get all customers
+2024-10-08 16:06:47 INFO  l.i.g.a.p.controller.ItemController - Request to get all items
+2024-10-08 16:06:47 INFO  l.i.g.a.p.service.ItemServiceImpl - Fetching all customers
+2024-10-08 16:06:47 INFO  l.i.g.a.p.s.CustomerServiceImpl - Fetching all customers
+2024-10-08 16:06:47 INFO  l.i.g.a.p.s.CustomerServiceImpl - Successfully retrieved all customers, count: 9
+2024-10-08 16:06:47 INFO  l.i.g.a.p.service.ItemServiceImpl - Successfully retrieved all customers, count: 4
+2024-10-08 16:06:47 INFO  l.i.g.a.p.controller.ItemController - Successfully retrieved all items, count: 4
+2024-10-08 16:06:47 INFO  l.i.g.a.p.c.CustomerController - Successfully retrieved all customers, count: 9
+2024-10-08 16:06:47 INFO  l.i.g.a.p.c.CustomerController - Request to get all customers
+2024-10-08 16:06:47 INFO  l.i.g.a.p.s.CustomerServiceImpl - Fetching all customers
+2024-10-08 16:06:47 INFO  l.i.g.a.p.s.CustomerServiceImpl - Successfully retrieved all customers, count: 9
+2024-10-08 16:06:47 INFO  l.i.g.a.p.c.CustomerController - Successfully retrieved all customers, count: 9

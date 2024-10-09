@@ -2,8 +2,10 @@ package lk.ijse.gdse.aad.possystemusingspring.util;
 
 import lk.ijse.gdse.aad.possystemusingspring.dto.CustomerDto;
 import lk.ijse.gdse.aad.possystemusingspring.dto.ItemDto;
+import lk.ijse.gdse.aad.possystemusingspring.dto.OrderDto;
 import lk.ijse.gdse.aad.possystemusingspring.entity.Customer;
 import lk.ijse.gdse.aad.possystemusingspring.entity.Item;
+import lk.ijse.gdse.aad.possystemusingspring.entity.Order;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,5 +40,9 @@ public class Mapping {
 
     public List<ItemDto> convertToItemDtos(List<Item> itemList){
         return modelMapper.map(itemList, new TypeToken<List<ItemDto>>(){}.getType());
+    }
+
+    public Order convertToEntity(OrderDto orderDto){
+        return modelMapper.map(orderDto, Order.class);
     }
 }

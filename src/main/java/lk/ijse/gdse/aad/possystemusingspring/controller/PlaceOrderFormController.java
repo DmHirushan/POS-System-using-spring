@@ -48,8 +48,19 @@ public class PlaceOrderFormController {
 
     @PostMapping(value = "order_detail")
     public ResponseEntity<Void> saveOrderDetail(@RequestBody OrderDetailDto orderDetailDto){
-        orderDetailService.saveOrderDetails(orderDetailDto);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+        if (orderDetailDto == null) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }else {
+            try {
+                orderDetailService.saveOrderDetails(orderDetailDto);
+                return new ResponseEntity<>(HttpStatus.CREATED);
+            } catch (DataPersistFailedException e) {
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            } catch (Exception e) {
+                return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+            }
+        }
+
     }
 
 }

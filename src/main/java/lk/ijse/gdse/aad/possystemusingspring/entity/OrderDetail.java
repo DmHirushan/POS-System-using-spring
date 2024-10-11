@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@IdClass(OrderDetailPK.class)
 @Table(name = "order_detail")
 @Entity
 public class OrderDetail {

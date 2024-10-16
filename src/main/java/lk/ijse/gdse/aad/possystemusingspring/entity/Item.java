@@ -1,14 +1,13 @@
 package lk.ijse.gdse.aad.possystemusingspring.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor
@@ -22,8 +21,7 @@ public class Item  implements SuperEntity{
     private String itemName;
     private int itemQty;
     private double itemPrice;
-
-    @OneToMany(mappedBy = "items")
-    @ToString.Exclude
-    private List<Order> orders;
+    @OneToMany(mappedBy = "item" , cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnore
+    private List<OrderDetail> orderDetails = new ArrayList<>();
 }

@@ -18,6 +18,4 @@ public class CustomerDto implements SuperDto, CustomerResponse {
     private String customerName;
     private String customerAddress;
     private double customerSalary;
-    @JsonIgnore
-    private List<OrderDto> orders;
 }

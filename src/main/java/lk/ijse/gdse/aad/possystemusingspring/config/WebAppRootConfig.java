@@ -30,7 +30,7 @@ public class WebAppRootConfig {
     public DataSource dataSource() {
         var dmds = new DriverManagerDataSource();
         dmds.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dmds.setUrl("jdbc:mysql://localhost:3306/Pos_System_using_spring");
+        dmds.setUrl("jdbc:mysql://localhost:3306/Pos_System_using_spring_assignment?createDatabaseIfNotExist=true");
         dmds.setUsername("root");
         dmds.setPassword("Ijse1234");
         return dmds;

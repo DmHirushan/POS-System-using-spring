@@ -18,6 +18,4 @@ public class ItemDto implements SuperDto, ItemResponse {
     private String itemName;
     private int itemQty;
     private double itemPrice;
-    @JsonIgnore
-    private List<Order> orders;
 }

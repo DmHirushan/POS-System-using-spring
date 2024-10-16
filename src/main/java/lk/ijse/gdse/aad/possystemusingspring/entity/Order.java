@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor
@@ -24,13 +25,6 @@ public class Order implements SuperEntity{
     @JoinColumn(name = "customerId", referencedColumnName = "customerId", nullable = false)
     @JsonIgnore
     private Customer customer;
-
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(
-            name = "order_details",
-            joinColumns = @JoinColumn(name = "orderId", referencedColumnName = "orderId"),
-            inverseJoinColumns = @JoinColumn(name = "itemCode", referencedColumnName = "itemCode")
-    )
-    @JsonIgnore
-    private List<Item> items;
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<OrderDetail> orderDetails = new ArrayList<>();
 }

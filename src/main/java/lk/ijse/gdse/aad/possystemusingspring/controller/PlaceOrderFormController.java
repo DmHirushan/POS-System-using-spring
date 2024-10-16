@@ -1,10 +1,8 @@
 package lk.ijse.gdse.aad.possystemusingspring.controller;
 
-import lk.ijse.gdse.aad.possystemusingspring.dto.OrderDetailDto;
 import lk.ijse.gdse.aad.possystemusingspring.dto.OrderDto;
 
 import lk.ijse.gdse.aad.possystemusingspring.exception.DataPersistFailedException;
-import lk.ijse.gdse.aad.possystemusingspring.service.OrderDetailService;
 import lk.ijse.gdse.aad.possystemusingspring.service.OrderService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,8 +18,6 @@ public class PlaceOrderFormController {
     @Autowired
     private OrderService orderService;
 
-    @Autowired
-    private OrderDetailService orderDetailService;
 
     @PostMapping(value = "order")
     public ResponseEntity<Void> saveOrder(@RequestBody OrderDto orderDto){
@@ -46,21 +42,21 @@ public class PlaceOrderFormController {
 
     }
 
-    @PostMapping(value = "order_detail")
-    public ResponseEntity<Void> saveOrderDetail(@RequestBody OrderDetailDto orderDetailDto){
-        if (orderDetailDto == null) {
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-        }else {
-            try {
-                orderDetailService.saveOrderDetails(orderDetailDto);
-                return new ResponseEntity<>(HttpStatus.CREATED);
-            } catch (DataPersistFailedException e) {
-                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-            } catch (Exception e) {
-                return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-            }
-        }
-
-    }
+////    @PostMapping(value = "order_detail")
+////    public ResponseEntity<Void> saveOrderDetail(@RequestBody OrderDetailDto orderDetailDto){
+////        if (orderDetailDto == null) {
+////            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+////        }else {
+////            try {
+////                orderDetailService.saveOrderDetails(orderDetailDto);
+////                return new ResponseEntity<>(HttpStatus.CREATED);
+////            } catch (DataPersistFailedException e) {
+////                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+////            } catch (Exception e) {
+////                return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+////            }
+////        }
+//
+//    }
 
 }

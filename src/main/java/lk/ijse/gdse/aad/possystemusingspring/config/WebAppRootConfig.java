@@ -19,7 +19,6 @@ import javax.sql.DataSource;
 @Configuration
 @ComponentScan(basePackages = "lk.ijse.gdse.aad.possystemusingspring")
 @EnableJpaRepositories(basePackages = "lk.ijse.gdse.aad.possystemusingspring")
-@EnableWebMvc
 @EnableTransactionManagement
 public class WebAppRootConfig {
     @Bean

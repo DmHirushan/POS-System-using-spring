@@ -37,3 +37,7 @@
 2024-10-08 16:06:47 INFO  l.i.g.a.p.s.CustomerServiceImpl - Fetching all customers
 2024-10-08 16:06:47 INFO  l.i.g.a.p.s.CustomerServiceImpl - Successfully retrieved all customers, count: 9
 2024-10-08 16:06:47 INFO  l.i.g.a.p.c.CustomerController - Successfully retrieved all customers, count: 9
+2024-10-15 21:32:33 INFO  l.i.g.a.p.controller.ItemController - Request to delete item with ID: I004
+2024-10-15 21:32:33 INFO  l.i.g.a.p.service.ItemServiceImpl - Attempting to delete item with item code: I004
+2024-10-15 21:32:33 INFO  l.i.g.a.p.service.ItemServiceImpl - Successfully deleted item with item code: I004
+2024-10-15 21:32:33 INFO  l.i.g.a.p.controller.ItemController - Successfully deleted item with ID: I004

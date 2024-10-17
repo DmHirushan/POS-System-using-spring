@@ -1,5 +1,6 @@
 package lk.ijse.gdse.aad.possystemusingspring.controller;
 
+import jakarta.validation.Valid;
 import lk.ijse.gdse.aad.possystemusingspring.customObj.CustomerResponse;
 import lk.ijse.gdse.aad.possystemusingspring.dto.CustomerDto;
 import lk.ijse.gdse.aad.possystemusingspring.exception.CustomerNotFoundException;
@@ -28,7 +29,7 @@ public class CustomerController {
     private final CustomerService customerService;
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Void> saveCustomer(@RequestBody CustomerDto customerDto){
+    public ResponseEntity<Void> saveCustomer(@Valid @RequestBody CustomerDto customerDto){
         logger.info("Request to save customer: {}", customerDto);
         if (customerDto == null) {
             logger.warn("Received null customerDto for saving");

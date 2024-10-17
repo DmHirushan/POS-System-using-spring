@@ -1015,3 +1015,255 @@ Caused by: jakarta.persistence.EntityNotFoundException: Unable to find lk.ijse.g
 2024-10-16 23:44:15 INFO  l.i.g.a.p.service.ItemServiceImpl - Attempting to save item: ItemDto(itemCode=I001, itemName=Biscuit, itemQty=50, itemPrice=0.0)
 2024-10-16 23:44:15 INFO  l.i.g.a.p.service.ItemServiceImpl - Successfully saved item: ItemDto(itemCode=I001, itemName=Biscuit, itemQty=50, itemPrice=0.0)
 2024-10-16 23:44:15 INFO  l.i.g.a.p.controller.ItemController - Successfully saved item: ItemDto(itemCode=I001, itemName=Biscuit, itemQty=50, itemPrice=0.0)
+2024-10-17 09:55:40 INFO  l.i.g.a.p.controller.ItemController - Request to save item: ItemDto(itemCode=I001, itemName=Biscuit, itemQty=50, itemPrice=0.0)
+2024-10-17 09:55:40 INFO  l.i.g.a.p.service.ItemServiceImpl - Attempting to save item: ItemDto(itemCode=I001, itemName=Biscuit, itemQty=50, itemPrice=0.0)
+2024-10-17 09:55:41 WARN  l.i.g.a.p.service.ItemServiceImpl - Item Code already exists: I001
+2024-10-17 09:55:41 ERROR l.i.g.a.p.controller.ItemController - Failed to persist item data: ItemDto(itemCode=I001, itemName=Biscuit, itemQty=50, itemPrice=0.0)
+lk.ijse.gdse.aad.possystemusingspring.exception.DataPersistFailedException: This Item Code already exists!
+	at lk.ijse.gdse.aad.possystemusingspring.service.ItemServiceImpl.saveItem(ItemServiceImpl.java:34)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy3/jdk.proxy3.$Proxy102.saveItem(Unknown Source)
+	at lk.ijse.gdse.aad.possystemusingspring.controller.ItemController.saveItem(ItemController.java:36)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-10-17 09:55:58 INFO  l.i.g.a.p.controller.ItemController - Request to get item with ID: I001
+2024-10-17 09:55:58 INFO  l.i.g.a.p.service.ItemServiceImpl - Fetching item with item code: I001
+2024-10-17 09:55:58 INFO  l.i.g.a.p.service.ItemServiceImpl - Successfully retrieved item: ItemDto(itemCode=I001, itemName=Biscuit, itemQty=50, itemPrice=0.0)
+2024-10-17 09:55:59 INFO  l.i.g.a.p.controller.ItemController - Successfully retrieved item: ItemDto(itemCode=I001, itemName=Biscuit, itemQty=50, itemPrice=0.0)
+2024-10-17 09:57:48 INFO  l.i.g.a.p.c.PlaceOrderFormController - Request to save order: OrderDto(orderId=Or001, date=2024-11-19, subTotal=20.0, total=5.0, customerId=C001, items=[ItemDto(itemCode=I001, itemName=Sun Light, itemQty=10, itemPrice=300.0)])
+2024-10-17 09:57:48 INFO  l.i.g.a.p.service.ItemServiceImpl - Attmpting to save order: OrderDto(orderId=Or001, date=2024-11-19, subTotal=20.0, total=5.0, customerId=C001, items=[ItemDto(itemCode=I001, itemName=Sun Light, itemQty=10, itemPrice=300.0)])
+2024-10-17 09:57:48 INFO  l.i.g.a.p.c.PlaceOrderFormController - Successfully saved order: OrderDto(orderId=Or001, date=2024-11-19, subTotal=20.0, total=5.0, customerId=C001, items=[ItemDto(itemCode=I001, itemName=Sun Light, itemQty=10, itemPrice=300.0)])
+2024-10-17 10:00:04 INFO  l.i.g.a.p.controller.ItemController - Request to save item: ItemDto(itemCode=I002, itemName=Biscuit, itemQty=50, itemPrice=150.0)
+2024-10-17 10:00:04 INFO  l.i.g.a.p.service.ItemServiceImpl - Attempting to save item: ItemDto(itemCode=I002, itemName=Biscuit, itemQty=50, itemPrice=150.0)
+2024-10-17 10:00:04 INFO  l.i.g.a.p.service.ItemServiceImpl - Successfully saved item: ItemDto(itemCode=I002, itemName=Biscuit, itemQty=50, itemPrice=150.0)
+2024-10-17 10:00:04 INFO  l.i.g.a.p.controller.ItemController - Successfully saved item: ItemDto(itemCode=I002, itemName=Biscuit, itemQty=50, itemPrice=150.0)
+2024-10-17 10:00:11 INFO  l.i.g.a.p.c.PlaceOrderFormController - Request to save order: OrderDto(orderId=Or001, date=2024-11-19, subTotal=20.0, total=5.0, customerId=C001, items=[ItemDto(itemCode=I002, itemName=Sun Light, itemQty=10, itemPrice=300.0)])
+2024-10-17 10:00:11 INFO  l.i.g.a.p.service.ItemServiceImpl - Attmpting to save order: OrderDto(orderId=Or001, date=2024-11-19, subTotal=20.0, total=5.0, customerId=C001, items=[ItemDto(itemCode=I002, itemName=Sun Light, itemQty=10, itemPrice=300.0)])
+2024-10-17 10:00:11 INFO  l.i.g.a.p.c.PlaceOrderFormController - Successfully saved order: OrderDto(orderId=Or001, date=2024-11-19, subTotal=20.0, total=5.0, customerId=C001, items=[ItemDto(itemCode=I002, itemName=Sun Light, itemQty=10, itemPrice=300.0)])
+2024-10-17 10:01:00 INFO  l.i.g.a.p.c.PlaceOrderFormController - Request to save order: OrderDto(orderId=Or002, date=2024-11-19, subTotal=20.0, total=5.0, customerId=C001, items=[ItemDto(itemCode=I002, itemName=Sun Light, itemQty=10, itemPrice=300.0)])
+2024-10-17 10:01:00 INFO  l.i.g.a.p.service.ItemServiceImpl - Attmpting to save order: OrderDto(orderId=Or002, date=2024-11-19, subTotal=20.0, total=5.0, customerId=C001, items=[ItemDto(itemCode=I002, itemName=Sun Light, itemQty=10, itemPrice=300.0)])
+2024-10-17 10:01:00 INFO  l.i.g.a.p.c.PlaceOrderFormController - Successfully saved order: OrderDto(orderId=Or002, date=2024-11-19, subTotal=20.0, total=5.0, customerId=C001, items=[ItemDto(itemCode=I002, itemName=Sun Light, itemQty=10, itemPrice=300.0)])
+2024-10-17 10:55:32 INFO  l.i.g.a.p.c.CustomerController - Request to save customer: CustomerDto(customerId=C001, customerName=, customerAddress=Madamulana, customerSalary=250000.0)
+2024-10-17 10:55:32 INFO  l.i.g.a.p.s.CustomerServiceImpl - Attempt to save customer: CustomerDto(customerId=C001, customerName=, customerAddress=Madamulana, customerSalary=250000.0)
+2024-10-17 10:55:33 WARN  l.i.g.a.p.s.CustomerServiceImpl - Customer Id already exists: C001
+2024-10-17 10:55:33 ERROR l.i.g.a.p.c.CustomerController - Failed to persist customer data: CustomerDto(customerId=C001, customerName=, customerAddress=Madamulana, customerSalary=250000.0)
+lk.ijse.gdse.aad.possystemusingspring.exception.DataPersistFailedException: This customer ID already exists!
+	at lk.ijse.gdse.aad.possystemusingspring.service.CustomerServiceImpl.saveCustomer(CustomerServiceImpl.java:36)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy3/jdk.proxy3.$Proxy98.saveCustomer(Unknown Source)
+	at lk.ijse.gdse.aad.possystemusingspring.controller.CustomerController.saveCustomer(CustomerController.java:39)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-10-17 10:55:47 INFO  l.i.g.a.p.c.CustomerController - Request to save customer: CustomerDto(customerId=C002, customerName=, customerAddress=Madamulana, customerSalary=250000.0)
+2024-10-17 10:55:47 INFO  l.i.g.a.p.s.CustomerServiceImpl - Attempt to save customer: CustomerDto(customerId=C002, customerName=, customerAddress=Madamulana, customerSalary=250000.0)
+2024-10-17 10:55:48 INFO  l.i.g.a.p.s.CustomerServiceImpl - Successfully saved customer: CustomerDto(customerId=C002, customerName=, customerAddress=Madamulana, customerSalary=250000.0)
+2024-10-17 10:55:48 INFO  l.i.g.a.p.c.CustomerController - Successfully saved customer: CustomerDto(customerId=C002, customerName=, customerAddress=Madamulana, customerSalary=250000.0)
+2024-10-17 12:44:45 INFO  l.i.g.a.p.c.CustomerController - Request to get all customers
+2024-10-17 12:44:45 INFO  l.i.g.a.p.s.CustomerServiceImpl - Fetching all customers
+2024-10-17 12:44:46 INFO  l.i.g.a.p.s.CustomerServiceImpl - Successfully retrieved all customers, count: 2
+2024-10-17 12:44:46 INFO  l.i.g.a.p.c.CustomerController - Successfully retrieved all customers, count: 2
+2024-10-17 12:47:00 INFO  l.i.g.a.p.controller.ItemController - Request to save item: ItemDto(itemCode=I003, itemName=Biscuit, itemQty=50, itemPrice=150.0)
+2024-10-17 12:47:00 INFO  l.i.g.a.p.service.ItemServiceImpl - Attempting to save item: ItemDto(itemCode=I003, itemName=Biscuit, itemQty=50, itemPrice=150.0)
+2024-10-17 12:47:01 INFO  l.i.g.a.p.service.ItemServiceImpl - Successfully saved item: ItemDto(itemCode=I003, itemName=Biscuit, itemQty=50, itemPrice=150.0)
+2024-10-17 12:47:01 INFO  l.i.g.a.p.controller.ItemController - Successfully saved item: ItemDto(itemCode=I003, itemName=Biscuit, itemQty=50, itemPrice=150.0)
+2024-10-17 12:47:06 INFO  l.i.g.a.p.controller.ItemController - Request to get item with ID: I001
+2024-10-17 12:47:06 INFO  l.i.g.a.p.service.ItemServiceImpl - Fetching item with item code: I001
+2024-10-17 12:47:06 INFO  l.i.g.a.p.service.ItemServiceImpl - Successfully retrieved item: ItemDto(itemCode=I001, itemName=Biscuit, itemQty=40, itemPrice=0.0)
+2024-10-17 12:47:06 INFO  l.i.g.a.p.controller.ItemController - Successfully retrieved item: ItemDto(itemCode=I001, itemName=Biscuit, itemQty=40, itemPrice=0.0)
+2024-10-17 12:49:07 INFO  l.i.g.a.p.controller.ItemController - Request to update item with ID: I001
+2024-10-17 12:49:07 INFO  l.i.g.a.p.service.ItemServiceImpl - Attempting to update customer with ID: I001
+2024-10-17 12:49:07 INFO  l.i.g.a.p.service.ItemServiceImpl - Updating item details for ID: I001
+2024-10-17 12:49:07 INFO  l.i.g.a.p.service.ItemServiceImpl - Successfully updated item with ID: I001
+2024-10-17 12:49:07 INFO  l.i.g.a.p.controller.ItemController - Successfully updated item with ID: I001
+2024-10-17 12:49:27 INFO  l.i.g.a.p.controller.ItemController - Request to delete item with ID: I003
+2024-10-17 12:49:27 INFO  l.i.g.a.p.service.ItemServiceImpl - Attempting to delete item with item code: I003
+2024-10-17 12:49:27 INFO  l.i.g.a.p.service.ItemServiceImpl - Successfully deleted item with item code: I003
+2024-10-17 12:49:27 INFO  l.i.g.a.p.controller.ItemController - Successfully deleted item with ID: I003
+2024-10-17 12:49:46 INFO  l.i.g.a.p.controller.ItemController - Request to get all items
+2024-10-17 12:49:46 INFO  l.i.g.a.p.service.ItemServiceImpl - Fetching all customers
+2024-10-17 12:49:46 INFO  l.i.g.a.p.service.ItemServiceImpl - Successfully retrieved all customers, count: 2
+2024-10-17 12:49:46 INFO  l.i.g.a.p.controller.ItemController - Successfully retrieved all items, count: 2
+2024-10-17 12:49:55 INFO  l.i.g.a.p.c.PlaceOrderFormController - Request to save order: OrderDto(orderId=Or003, date=2024-11-19, subTotal=20.0, total=5.0, customerId=C001, items=[ItemDto(itemCode=I002, itemName=Sun Light, itemQty=10, itemPrice=300.0)])
+2024-10-17 12:49:55 INFO  l.i.g.a.p.service.ItemServiceImpl - Attmpting to save order: OrderDto(orderId=Or003, date=2024-11-19, subTotal=20.0, total=5.0, customerId=C001, items=[ItemDto(itemCode=I002, itemName=Sun Light, itemQty=10, itemPrice=300.0)])
+2024-10-17 12:49:56 INFO  l.i.g.a.p.c.PlaceOrderFormController - Successfully saved order: OrderDto(orderId=Or003, date=2024-11-19, subTotal=20.0, total=5.0, customerId=C001, items=[ItemDto(itemCode=I002, itemName=Sun Light, itemQty=10, itemPrice=300.0)])
+2024-10-17 12:50:03 INFO  l.i.g.a.p.c.CustomerController - Request to save customer: CustomerDto(customerId=C004, customerName=Kaluwa, customerAddress=Madamulana, customerSalary=250000.0)
+2024-10-17 12:50:03 INFO  l.i.g.a.p.s.CustomerServiceImpl - Attempt to save customer: CustomerDto(customerId=C004, customerName=Kaluwa, customerAddress=Madamulana, customerSalary=250000.0)
+2024-10-17 12:50:03 INFO  l.i.g.a.p.s.CustomerServiceImpl - Successfully saved customer: CustomerDto(customerId=C004, customerName=Kaluwa, customerAddress=Madamulana, customerSalary=250000.0)
+2024-10-17 12:50:03 INFO  l.i.g.a.p.c.CustomerController - Successfully saved customer: CustomerDto(customerId=C004, customerName=Kaluwa, customerAddress=Madamulana, customerSalary=250000.0)
+2024-10-17 12:50:08 INFO  l.i.g.a.p.c.CustomerController - Request to get customer with customerId: C002
+2024-10-17 12:50:08 INFO  l.i.g.a.p.s.CustomerServiceImpl - Fetching customer with customer id: C002
+2024-10-17 12:50:08 INFO  l.i.g.a.p.s.CustomerServiceImpl - Successfully retrieved customer: CustomerDto(customerId=C002, customerName=, customerAddress=Madamulana, customerSalary=250000.0)
+2024-10-17 12:50:08 INFO  l.i.g.a.p.c.CustomerController - Successfully retrieved customer: CustomerDto(customerId=C002, customerName=, customerAddress=Madamulana, customerSalary=250000.0)
+2024-10-17 12:50:18 INFO  l.i.g.a.p.c.CustomerController - Request to delete customer with customerId: C004
+2024-10-17 12:50:18 INFO  l.i.g.a.p.s.CustomerServiceImpl - Attempting to delete customer with id: C004
+2024-10-17 12:50:18 INFO  l.i.g.a.p.s.CustomerServiceImpl - Successfully delete customer with id: C004
+2024-10-17 12:50:18 INFO  l.i.g.a.p.c.CustomerController - Successfully deleted customer with customerId: C004
+2024-10-17 12:50:32 INFO  l.i.g.a.p.c.CustomerController - Request to update customer with customerId: C002
+2024-10-17 12:50:32 INFO  l.i.g.a.p.s.CustomerServiceImpl - Attempting to update customer with customerId: C002
+2024-10-17 12:50:32 INFO  l.i.g.a.p.s.CustomerServiceImpl - Updating customer details for customerId: C002
+2024-10-17 12:50:32 INFO  l.i.g.a.p.s.CustomerServiceImpl - Successfully updated customer with customerId: C002
+2024-10-17 12:50:32 INFO  l.i.g.a.p.c.CustomerController - Succcessfully updated customer with id: C002
+2024-10-17 12:50:35 INFO  l.i.g.a.p.c.CustomerController - Request to get all customers
+2024-10-17 12:50:35 INFO  l.i.g.a.p.s.CustomerServiceImpl - Fetching all customers
+2024-10-17 12:50:35 INFO  l.i.g.a.p.s.CustomerServiceImpl - Successfully retrieved all customers, count: 2
+2024-10-17 12:50:35 INFO  l.i.g.a.p.c.CustomerController - Successfully retrieved all customers, count: 2
+2024-10-17 12:53:44 INFO  l.i.g.a.p.controller.ItemController - Request to save item: ItemDto(itemCode=I003, itemName=Biscuit, itemQty=50, itemPrice=150.0)
+2024-10-17 12:53:44 INFO  l.i.g.a.p.service.ItemServiceImpl - Attempting to save item: ItemDto(itemCode=I003, itemName=Biscuit, itemQty=50, itemPrice=150.0)
+2024-10-17 12:53:44 INFO  l.i.g.a.p.service.ItemServiceImpl - Successfully saved item: ItemDto(itemCode=I003, itemName=Biscuit, itemQty=50, itemPrice=150.0)
+2024-10-17 12:53:44 INFO  l.i.g.a.p.controller.ItemController - Successfully saved item: ItemDto(itemCode=I003, itemName=Biscuit, itemQty=50, itemPrice=150.0)
+2024-10-17 12:55:40 INFO  l.i.g.a.p.controller.ItemController - Request to delete item with ID: I002
+2024-10-17 12:55:40 INFO  l.i.g.a.p.service.ItemServiceImpl - Attempting to delete item with item code: I002
+2024-10-17 12:55:40 INFO  l.i.g.a.p.service.ItemServiceImpl - Successfully deleted item with item code: I002
+2024-10-17 12:55:40 INFO  l.i.g.a.p.controller.ItemController - Successfully deleted item with ID: I002
+2024-10-17 12:56:12 INFO  l.i.g.a.p.controller.ItemController - Request to get item with ID: I001
+2024-10-17 12:56:12 INFO  l.i.g.a.p.service.ItemServiceImpl - Fetching item with item code: I001
+2024-10-17 12:56:12 INFO  l.i.g.a.p.service.ItemServiceImpl - Successfully retrieved item: ItemDto(itemCode=I001, itemName=Toffee, itemQty=50, itemPrice=0.0)
+2024-10-17 12:56:12 INFO  l.i.g.a.p.controller.ItemController - Successfully retrieved item: ItemDto(itemCode=I001, itemName=Toffee, itemQty=50, itemPrice=0.0)
+2024-10-17 12:56:58 INFO  l.i.g.a.p.controller.ItemController - Request to get all items
+2024-10-17 12:56:58 INFO  l.i.g.a.p.service.ItemServiceImpl - Fetching all customers
+2024-10-17 12:56:58 INFO  l.i.g.a.p.service.ItemServiceImpl - Successfully retrieved all customers, count: 2
+2024-10-17 12:56:58 INFO  l.i.g.a.p.controller.ItemController - Successfully retrieved all items, count: 2
+2024-10-17 12:57:23 INFO  l.i.g.a.p.controller.ItemController - Request to save item: ItemDto(itemCode=I003, itemName=Biscuit, itemQty=50, itemPrice=150.0)
+2024-10-17 12:57:23 INFO  l.i.g.a.p.service.ItemServiceImpl - Attempting to save item: ItemDto(itemCode=I003, itemName=Biscuit, itemQty=50, itemPrice=150.0)
+2024-10-17 12:57:23 WARN  l.i.g.a.p.service.ItemServiceImpl - Item Code already exists: I003
+2024-10-17 12:57:24 ERROR l.i.g.a.p.controller.ItemController - Failed to persist item data: ItemDto(itemCode=I003, itemName=Biscuit, itemQty=50, itemPrice=150.0)
+lk.ijse.gdse.aad.possystemusingspring.exception.DataPersistFailedException: This Item Code already exists!
+	at lk.ijse.gdse.aad.possystemusingspring.service.ItemServiceImpl.saveItem(ItemServiceImpl.java:34)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy3/jdk.proxy3.$Proxy102.saveItem(Unknown Source)
+	at lk.ijse.gdse.aad.possystemusingspring.controller.ItemController.saveItem(ItemController.java:36)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-10-17 12:57:35 INFO  l.i.g.a.p.controller.ItemController - Request to save item: ItemDto(itemCode=I004, itemName=Biscuit, itemQty=50, itemPrice=150.0)
+2024-10-17 12:57:35 INFO  l.i.g.a.p.service.ItemServiceImpl - Attempting to save item: ItemDto(itemCode=I004, itemName=Biscuit, itemQty=50, itemPrice=150.0)
+2024-10-17 12:57:35 INFO  l.i.g.a.p.service.ItemServiceImpl - Successfully saved item: ItemDto(itemCode=I004, itemName=Biscuit, itemQty=50, itemPrice=150.0)
+2024-10-17 12:57:35 INFO  l.i.g.a.p.controller.ItemController - Successfully saved item: ItemDto(itemCode=I004, itemName=Biscuit, itemQty=50, itemPrice=150.0)

@@ -17,6 +17,6 @@ public class OrderDto implements Serializable {
     private String date;
     private double subTotal;
     private double total;
-    private CustomerDto customer;
+    private String customerId;
     private List<ItemDto> items = new ArrayList<>();
 }

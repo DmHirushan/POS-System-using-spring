@@ -1007,3 +1007,11 @@ Caused by: jakarta.persistence.EntityNotFoundException: Unable to find lk.ijse.g
 2024-10-16 23:36:49 INFO  l.i.g.a.p.s.CustomerServiceImpl - Fetching customer with customer id: C002
 2024-10-16 23:36:49 INFO  l.i.g.a.p.s.CustomerServiceImpl - Successfully retrieved customer: CustomerDto(customerId=C002, customerName=Kamal, customerAddress=Galle, customerSalary=50000.0)
 2024-10-16 23:36:49 INFO  l.i.g.a.p.c.CustomerController - Successfully retrieved customer: CustomerDto(customerId=C002, customerName=Kamal, customerAddress=Galle, customerSalary=50000.0)
+2024-10-16 23:43:57 INFO  l.i.g.a.p.c.CustomerController - Request to save customer: CustomerDto(customerId=C001, customerName=Namal Rajapakshe, customerAddress=Madamulana, customerSalary=250000.0)
+2024-10-16 23:43:58 INFO  l.i.g.a.p.s.CustomerServiceImpl - Attempt to save customer: CustomerDto(customerId=C001, customerName=Namal Rajapakshe, customerAddress=Madamulana, customerSalary=250000.0)
+2024-10-16 23:43:59 INFO  l.i.g.a.p.s.CustomerServiceImpl - Successfully saved customer: CustomerDto(customerId=C001, customerName=Namal Rajapakshe, customerAddress=Madamulana, customerSalary=250000.0)
+2024-10-16 23:43:59 INFO  l.i.g.a.p.c.CustomerController - Successfully saved customer: CustomerDto(customerId=C001, customerName=Namal Rajapakshe, customerAddress=Madamulana, customerSalary=250000.0)
+2024-10-16 23:44:15 INFO  l.i.g.a.p.controller.ItemController - Request to save item: ItemDto(itemCode=I001, itemName=Biscuit, itemQty=50, itemPrice=0.0)
+2024-10-16 23:44:15 INFO  l.i.g.a.p.service.ItemServiceImpl - Attempting to save item: ItemDto(itemCode=I001, itemName=Biscuit, itemQty=50, itemPrice=0.0)
+2024-10-16 23:44:15 INFO  l.i.g.a.p.service.ItemServiceImpl - Successfully saved item: ItemDto(itemCode=I001, itemName=Biscuit, itemQty=50, itemPrice=0.0)
+2024-10-16 23:44:15 INFO  l.i.g.a.p.controller.ItemController - Successfully saved item: ItemDto(itemCode=I001, itemName=Biscuit, itemQty=50, itemPrice=0.0)
